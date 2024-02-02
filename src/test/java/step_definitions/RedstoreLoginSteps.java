@@ -1,5 +1,6 @@
 package step_definitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -25,6 +26,7 @@ public class RedstoreLoginSteps {
     @Given("User already on homepage")
     public void verifyUserName(){
         Assert.assertTrue(redstoreLoginPage.verifyLogoWebsite());
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
     @Then("User click button sign in")
     public void clickButtonSignin() {
@@ -135,4 +137,5 @@ public class RedstoreLoginSteps {
         Assert.assertTrue(redstoreLoginPage.verifyOrderResult());
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
+
 }
